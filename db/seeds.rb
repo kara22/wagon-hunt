@@ -12,6 +12,11 @@ kara = User.create!(email: 'kara@gmail.com', password: 'testtest')
 imane = User.create!(email: 'imane@gmail.com', password: 'testtest')
 
 
-Product.create!(user: kara, name: "Kudoz", url: "http://getkudoz.com", tagline: "Tinder for job search", category: 'tech')
-Product.create!(user: kara,name: "Uslide", url: "http://Uslide.io", tagline: "Youtube sucks for education", category: 'tech')
+kudoz = Product.create!(user: kara, name: "Kudoz", url: "http://getkudoz.com", tagline: "Tinder for job search", category: 'tech')
+uslide = Product.create!(user: kara,name: "Uslide", url: "http://Uslide.io", tagline: "Youtube sucks for education", category: 'tech')
 Product.create!(user: imane,name: "Medpics", url: "http://medpics.com", tagline: "Share your diagnostics", category: 'tech')
+
+
+kudoz.upvotes.create! user: kara
+kudoz.upvotes.create! user: imane
+uslide.upvotes.create! user: kara
