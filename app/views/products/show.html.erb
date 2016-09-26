@@ -11,6 +11,8 @@
       Posté par <%= @product.user.email %>
     </p>
     <% end %>
-    <%= link_to "GET IT", @product.url, class: "btn btn-primary btn-lg" %>
+    <%= link_to cloudinary_url(@product.photo.path, :resource_type => :raw) do  %>
+    <i class="fa fa-eye"></i>
+    <% end %>
   </div>
 </div>
